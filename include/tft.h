@@ -2,6 +2,7 @@
 #define __TFT_H__
 
 #include "board.h"
+#include "system.h"
 #include "spi.h"
 
 #define USE_HORIZONTAL 0  //设置横屏或者竖屏显示 0或1为竖屏 2或3为横屏
