@@ -3,14 +3,18 @@
 
 /*包含AG32板级头文件*/
 #include "board.h"
-#include "system.h"
-#include "timer.h"
+#include "port.h"
+#include "timer1.h"
 
 /*包含相关外设头文件*/
 #include "ds18b20.h"
 #include "tft.h"
 #include "esp8266.h"
 #include "jq8900.h"
+
+/*包含C标准库文件*/
+#include <stdio.h>
+#include <string.h>
 
 /*外设引脚宏定义*/
 

@@ -1,5 +1,5 @@
-#ifndef __SYSTEM_H__
-#define __SYSTEM_H__
+#ifndef __PORT_H__
+#define __PORT_H__
 
 /*包含相关头文件*/
 #include "board.h"

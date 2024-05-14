@@ -1,4 +1,4 @@
-#include "system.h"
+#include "port.h"
 
 /*滴速取样定义*/
 unsigned long times=0;        //取样时间

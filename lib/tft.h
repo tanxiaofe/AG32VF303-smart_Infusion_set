@@ -2,8 +2,8 @@
 #define __TFT_H__
 
 #include "board.h"
-#include "system.h"
-#include "spi.h"
+#include "port.h"
+#include "sw_spi.h"
 
 #define USE_HORIZONTAL 0  //设置横屏或者竖屏显示 0或1为竖屏 2或3为横屏
 #define Chip_Selection 1   //设置芯片初始化 0为ILI9341  1为ST7789

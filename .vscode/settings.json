@@ -6,6 +6,12 @@
         "tft.h": "c",
         "spi.h": "c",
         "main.h": "c",
-        "esp8266.h": "c"
+        "esp8266.h": "c",
+        "stdio.h": "c",
+        "board.h": "c",
+        "alta.h": "c",
+        "system.h": "c",
+        "timer1.h": "c",
+        "uart.h": "c"
     }
 }

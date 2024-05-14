@@ -1,5 +1,5 @@
-#ifndef __SPI_H__
-#define __SPI_H__		  	 
+#ifndef __SW_SPI_H__
+#define __SW_SPI_H__		  	 
 
 /*包含AG32板级头文件*/
 #include "board.h"

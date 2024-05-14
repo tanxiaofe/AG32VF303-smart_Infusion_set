@@ -3,7 +3,7 @@
 
 /*包含相关头文件*/
 #include "board.h"
-#include "system.h"
+#include "port.h"
 
 /*外设引脚宏定义*/
 #define JQ_BUSY_GPIO GPIO5

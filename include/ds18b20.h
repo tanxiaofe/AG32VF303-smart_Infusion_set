@@ -3,7 +3,7 @@
 
 /*包含相关头文件*/
 #include "board.h"
-#include "system.h"
+#include "port.h"
 
 /*外设引脚宏定义*/
 #define TEMP_GPIO GPIO3
@@ -22,6 +22,5 @@ extern uint8_t flag;
 void DS18B20_Init(void);
 uint16_t DS18B20_ReadTemp(void);
 uint8_t DS18B20_Reset(void);
-
 
 #endif
