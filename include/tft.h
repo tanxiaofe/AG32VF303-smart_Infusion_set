@@ -2,7 +2,8 @@
 #define __TFT_H__
 
 #include "board.h"
-#include "spi.h"
+#include "port.h"
+#include "sw_spi.h"
 
 #define USE_HORIZONTAL 0  //设置横屏或者竖屏显示 0或1为竖屏 2或3为横屏
 #define Chip_Selection 1   //设置芯片初始化 0为ILI9341  1为ST7789
@@ -24,8 +25,6 @@
 #define TFT_DC_GPIO GPIO4
 #define TFT_DC_PORT GPIO_BIT3
 
-#define TFT_CS_GPIO GPIO4
-#define TFT_CS_PORT GPIO_BIT4
 
 //-----------------LCD端口定义---------------- 
 
@@ -41,8 +40,6 @@
 #define LCD_DC_Clr()   GPIO_SetLow(GPIO4,GPIO_BIT3)//DC
 #define LCD_DC_Set()   GPIO_SetHigh(GPIO4,GPIO_BIT3)
  		     
-#define LCD_CS_Clr()   GPIO_SetLow(GPIO4,GPIO_BIT4)//CS
-#define LCD_CS_Set()   GPIO_SetHigh(GPIO4,GPIO_BIT4)
 
 #define LCD_BLK_Clr()  GPIO_SetLow(GPIO4,GPIO_BIT6)//BLK
 #define LCD_BLK_Set()  GPIO_SetHigh(GPIO4,GPIO_BIT6)

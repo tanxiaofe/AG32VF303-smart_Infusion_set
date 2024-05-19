@@ -1,11 +1,11 @@
-SYSCLK 248
+SYSCLK 240
 
 HSECLK 8
 
 #硬件SPI
-SPI0_SCK            PIN_10
-SPI0_SI_IO0         PIN_31
-SPI0_SO_IO1         PIN_14
+SPI0_SCK            PIN_6
+SPI0_SI_IO0         PIN_5
+SPI0_SO_IO1         PIN_4
 
 #按键引脚K1设置 K2 K3增减按键
 GPIO3_1 PIN_45 # IO_Button1
@@ -13,34 +13,38 @@ GPIO3_2 PIN_43 # IO_Button2
 GPIO3_3 PIN_42 # IO_Button3
 
 #滴速模块输入引脚
-GPIO3_4 PIN_28 # dirpping speed sensor input
+GPIO3_4 PIN_29 # dirpping speed sensor digital input
+GPIO3_7 PIN_32 # dirpping speed sensor anlong input
 
 #DS18B20输入引脚
-GPIO3_5 PIN_40 # temperature sensor input
+GPIO3_5 PIN_33# temperature sensor input
 
 #水位传感器输入引脚
-GPIO3_6 PIN_41 # water level sensnor input
+GPIO3_6 PIN_35 # water level sensnor input
 
 
 #USB ID
 USB0_ID PIN_78
 
-#以下定义为ESP8266模块 串口0引脚
+#以下定义为DEBUG串口0引脚
 UART0_UARTRXD PIN_31
 UART0_UARTTXD PIN_30
 
+#以下定义为ESP8266模块01s 串口1引脚
+UART1_UARTRXD PIN_14
+UART1_UARTTXD PIN_13
 
 GPIO5_1 PIN_46 #LED1
 
 #以下定义为步进电机引脚
-GPIO5_2 PIN_3 #Stepping motor IN1
-GPIO5_3 PIN_4 #Stepping motor IN2
-GPIO5_4 PIN_5 #Stepping motor IN3
-GPIO5_5 PIN_6 #Stepping motor IN4
+GPIO5_2 PIN_25 #Stepping motor IN1
+GPIO5_3 PIN_26 #Stepping motor IN2
+GPIO5_4 PIN_27 #Stepping motor IN3
+GPIO5_5 PIN_28 #Stepping motor IN4
 
-#以下定义为JQ8900 BUS引脚和串口1引脚
-UART1_UARTTXD PIN_16
-UART1_UARTRXD PIN_15
+#以下定义为JQ8900 BUS引脚和串口2引脚
+UART2_UARTTXD PIN_16
+UART2_UARTRXD PIN_15
 GPIO5_6 PIN_17 #JQ8900_BUSY
 
 #以下定义为TFT屏幕引脚

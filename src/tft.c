@@ -5,7 +5,7 @@
 void TFT_GPIO_Init(void)
 {   
     
-    //开启时钟
+     //开启时钟
     SYS_EnableAPBClock(APB_MASK_GPIO4);
 
     //TFT RST GPIO输出配置
@@ -17,9 +17,6 @@ void TFT_GPIO_Init(void)
     //TFT DC GPIO输出配置
     GPIO_SetOutput(TFT_DC_GPIO,TFT_DC_PORT);
 
-    //TFT CS GPIO输出配置
-    GPIO_SetOutput(TFT_CS_GPIO,TFT_CS_PORT);
-
     #if USING_SOLFTWARE_SPI
      //TFT SCK GPIO输出配置
     GPIO_SetOutput(TFT_SCK_GPIO,TFT_SCK_PORT);
@@ -29,7 +26,7 @@ void TFT_GPIO_Init(void)
     #endif
 
     //GPIO默认输出高电平
-    GPIO_SetHigh(GPIO4,GPIO_BIT3|GPIO_BIT4);
+    GPIO_SetHigh(GPIO4,GPIO_BIT3);
     GPIO_SetHigh(GPIO4,GPIO_BIT5|GPIO_BIT6);
 
     #if USING_SOLFTWARE_SPI
@@ -45,9 +42,8 @@ void TFT_GPIO_Init(void)
 ******************************************************************************/
 void LCD_Writ_Bus(uint8_t dat) 
 {	
-	LCD_CS_Clr();
+
     SPI0_ReadWriteByte(dat);
-	LCD_CS_Set();
 }
 
 /******************************************************************************

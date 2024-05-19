@@ -1,4 +1,4 @@
-#include "spi.h"
+#include "sw_spi.h"
 
 
 static SPI_TypeDef *spi __attribute__((aligned(4))) = (SPI_TypeDef *)0x0;
