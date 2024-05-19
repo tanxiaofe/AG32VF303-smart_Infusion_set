@@ -192,6 +192,7 @@ void System_Port_Init(void)
 	speed_sensor_init();    //低速传感器初始化
     Gptimer1_Init(1e3,240); //通用定时器1定时1ms一次中断
 	LCD_Fill(0,0,LCD_W,LCD_H,WHITE);//填充白色
+	InitDisplay();			//显示主界面
 }
 
 /******************************************************************************

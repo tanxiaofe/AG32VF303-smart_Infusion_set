@@ -7,7 +7,7 @@ int main(void)
     
     /*系统外设初始化*/
     System_Port_Init();
-	InitDisplay();
+	
     while (1)
     {   
           keyscan();  //按键扫描
