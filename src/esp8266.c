@@ -22,9 +22,11 @@ void ESP8266_UART_Init(uint32_t bound)
     UART_LCR_PARITY_NONE,UART_LCR_FIFO_16);
     
     /*开启UART1接收中断*/
-    UART_EnableInt(UART1,UART_INT_RX);
-    UART_SetRxIntFifoLevel(UART1,UART_INT_FIFO_HALF);
-    INT_EnableIRQ(UART1_IRQn,UART_PRIORITY+1);
+    UART_EnableInt(UART1, UART_INT_RT); //配置 收超时中断
+  	UART_EnableInt(UART1, UART_INT_RX); //配置 收中断
+ 	 UART_SetRxIntFifoLevel(UART1, UART_INT_FIFO_HALF); //配置FIFO收多少字节时产生收中断
+  	INT_EnableIRQ(UART1_IRQn, UART_PRIORITY);
+
 
 }
 

@@ -551,30 +551,19 @@ void UsartSendReceiveData(void)
 ******************************************************************************/
 void UART1_isr()
 {   
-  	uint32_t tick = UTIL_GetTick();
-
-    if(UART_IsRawIntActive(UART1,UART_INT_RX))
-    {
-        UART_ClearInt(UART1,UART_INT_RX);
-        // RxCounter=UART_Receive(UART1,rxbuf,8,0);
-		
- 	while (RxCounter < 8) 
-	{
-    	if (UART_IsRxFifoEmpty(UART1)) 
-		{
-      		if (0 && UTIL_GetTick() - tick >0) 
-			{
-        		break;
-      		} 
-			else 
-			{
-       		    continue;
-      		}
-    	}
-   		 rxbuf[RxCounter]= UART1->DR;
-    	++RxCounter;
-  	}
-    }
+  if (UART_IsRawIntActive(UART1, UART_INT_RX)) 
+  {
+    UART_ClearInt(UART1, UART_INT_RX);
+    /*注意：这时FIFO里有8个字节长度，但特意不全部收取。
+    这么做，是为了保证传输数据刚好是8的整数倍时，仍然会触发下边的UART_INT_RT中断。*/
+    UART_Receive(UART1, rxbuf + RxCounter, 7, 0); //half: 16/2=8。
+   	RxCounter += 7;
+  }
+  else if (UART_IsRawIntActive(UART0, UART_INT_RT)) 
+  {
+    UART_ClearInt(UART1, UART_INT_RT);
+    RxCounter += UART_Receive(UART1, rxbuf + RxCounter, 8, 1); //最后一个参数不能为0
+  }
 }
 
 /******************************************************************************
